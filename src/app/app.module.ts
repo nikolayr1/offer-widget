@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { OrderItemsComponent } from './components/order-items/order-items.component';
+import { OrderItemComponent } from './components/order-item/order-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactInfoComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule

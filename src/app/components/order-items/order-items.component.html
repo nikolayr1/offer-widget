@@ -1,3 +1,2 @@
-<p>
-  order-items works!
-</p>
+<app-order-item [item]="i" *ngFor="let i of items"></app-order-item>
+<button (click)="addItem()" >Add item</button>
