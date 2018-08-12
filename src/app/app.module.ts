@@ -6,6 +6,7 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { OrderItemsComponent } from './components/order-items/order-items.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
