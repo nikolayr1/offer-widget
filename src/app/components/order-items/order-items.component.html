@@ -1,2 +1,6 @@
-<app-order-item [item]="i" *ngFor="let i of items"></app-order-item>
-<button (click)="addItem()" >Add item</button>
+<app-order-item
+  [item]="item"
+  *ngFor="let item of items; let i = index"
+  (removeEvent)="removeItemByIndex(i)">
+</app-order-item>
+<button (click)="addItem()">Add item</button>

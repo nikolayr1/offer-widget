@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {OrderItemInterface} from "../../interfaces/order-item.interface";
 
 @Component({
@@ -6,16 +6,12 @@ import {OrderItemInterface} from "../../interfaces/order-item.interface";
   templateUrl: './order-items.component.html',
   styleUrls: ['./order-items.component.css'],
 })
-export class OrderItemsComponent implements OnInit {
+export class OrderItemsComponent {
   public items: OrderItemInterface[] = [{
     id: 1,
     number: 1,
     title: 'Some item'
   }];
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   public addItem(): void  {
     this.items.push({
@@ -23,5 +19,9 @@ export class OrderItemsComponent implements OnInit {
       number: 2,
       title: 'Some new item'
     })
+  }
+
+  public removeItemByIndex(index: number): void {
+    this.items.splice(index, 1);
   }
 }
