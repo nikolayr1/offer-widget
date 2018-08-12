@@ -7,11 +7,22 @@ import {OrderItemInterface} from "../../interfaces/order-item.interface";
   styleUrls: ['./order-item.component.sass']
 })
 export class OrderItemComponent {
-  @Input() item: OrderItemInterface;
-  @Output() removeEvent = new EventEmitter<void>();
+  @Input() public item: OrderItemInterface;
+  @Output() public removeEvent = new EventEmitter<void>();
 
   public removeItem(): void {
     this.removeEvent.emit();
+  }
+
+  public addOne(): void {
+    this.item.number++;
+  }
+
+  public removeOne(): void {
+    this.item.number--;
+    if (this.item.number === 0) {
+      this.removeItem();
+    }
   }
 }
 

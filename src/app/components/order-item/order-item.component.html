@@ -1,5 +1,7 @@
 <div class="order-item">
   <b>{{item.title}}</b><br/>
   Number: {{item.number}}<br/>
+  <button (click)="addOne()">+1</button>
+  <button (click)="removeOne()">-1</button>
   <button (click)="removeItem()">Remove item</button>
 </div>
