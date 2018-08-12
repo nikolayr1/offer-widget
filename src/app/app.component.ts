@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string = 'start title';
-  public changeTitleText(newTitleText: string): void {
-    this.title = newTitleText;
-  }
 }
