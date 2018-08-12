@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {OrderItemInterface} from "./interfaces/order-item.interface";
 import {ITEMS_MOCK} from "./mock/items.mock";
 import {ContactInfoInterface} from "./interfaces/contact-info.interface";
@@ -9,18 +9,24 @@ import {ContactInfoInterface} from "./interfaces/contact-info.interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @Input() orderId: string;
+  @Output() submitEvent = new EventEmitter();
   public items: OrderItemInterface[] = ITEMS_MOCK;
   public contactInfo: ContactInfoInterface;
 
   constructor() {
     this.contactInfo = {
-      name: 'Ivan',
-      surname: 'S',
-      phone: '2323423'
+      name: '',
+      surname: '',
+      phone: ''
     }
   }
 
   public submit(): void {
-    console.log(this.contactInfo, this.items)
+    this.submitEvent.emit({
+      orderId: this.orderId,
+      items: this.items,
+      contactInfo: this.contactInfo
+    });
   }
 }
