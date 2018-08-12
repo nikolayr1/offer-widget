@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {OrderItemInterface} from "../../interfaces/order-item.interface";
-import {ITEMS_MOCK} from "../../mock/items.mock";
 
 @Component({
   selector: 'app-order-items',
@@ -8,7 +7,7 @@ import {ITEMS_MOCK} from "../../mock/items.mock";
   styleUrls: ['./order-items.component.css'],
 })
 export class OrderItemsComponent {
-  public items: OrderItemInterface[] = ITEMS_MOCK;
+  @Input() public items: OrderItemInterface[];
 
   public removeItemByIndex(index: number): void {
     this.items.splice(index, 1);

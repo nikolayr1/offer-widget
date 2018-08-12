@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { OrderItemsComponent } from './components/order-items/order-items.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OrderItemComponent } from './components/order-item/order-item.component
     OrderItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
